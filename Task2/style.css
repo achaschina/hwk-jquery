@@ -1,0 +1,51 @@
+.timer {
+  width: 600px;
+  height: 400px;
+  background: url('http://bgfons.com/upload/ornaments_texture1129.jpg');
+}
+
+.timer-header {
+  width: inherit;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-header>span {
+  color: white;
+  font-size: 40px;
+}
+
+.cards {
+  width: inherit;
+  display: flex;
+  justify-content: space-around;
+}
+
+.days, .hours, .minutes, .seconds {
+  width: 120px;
+  background: white;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.days span, .hours span, .minutes span, .seconds span {
+  font-size: 3.5em;
+}
+
+.titles {
+  height: 50px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.titles span {
+  width: 120px;
+  color: #B5B2B2;
+  text-align: center;
+  font-size: 1.3em;
+}
