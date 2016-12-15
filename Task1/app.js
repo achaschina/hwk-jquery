@@ -35,9 +35,9 @@ function validateEmail() {
 function validateDate() {
   var isValid = true;
   var date = $("[name = 'date']").val();
-  var dateArr = date.split("/");
+  var pattern = /^([0-3]{1}[0-1]{1})|([0-2]{1}[0-9]{1})\/([1]{1}[0-2]{1})|([0]{1}[1-9]{1})\/\d{4}$/g;
 
-  if (date.search(/[0-9]+\/+[0-9]+\/+[0-9]{4}/g) === -1) {
+  if (!date.match(pattern)) {
     alert('Date should be in format DD/MM/YYYY');
     isValid = false;
   }
