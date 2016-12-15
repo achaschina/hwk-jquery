@@ -1,33 +1,59 @@
-$('input:submit').click(function () {
-  // event.preventDefault();
-  validateName();
-  validateEmail();
-});
+$('form').attr('onsubmit', 'return validate()');
 
+function validate() {
+  var val = validateName() && validateEmail() && validateDate() && validateIp();
+  return val;
+}
 
 function validateName() {
+  var isValid = true;
   var name = $("[name='name']").val();
   if (name.length < 5 || name.length > 30) {
-    alert('Min length is 5. Max length of name is 30 characters. ');
-  } 
+    alert('Name should be in length from 5 to 30 characters');
+    isValid = false;
+  } else if (name.search(/[0-9]/) !== -1) {
+    alert('Name has to be without numbers');
+    isValid = false;
+  }
+
+  return isValid;
 }
 
 function validateEmail() {
+  var isValid = true;
   var $email = $("[name='email']");
-  var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i;
+  var pattern = /([a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6})/g;
 
+  if ($email.val().search(pattern) !== 0) {
+    alert('Email is not valid. Enter \'expamle@gmail.com \'');
+    isValid = false;
+  }
+
+  return isValid;
 }
 
-// $('#validate').validate({
-//   rules: {
-//     name: {
-//       required: true,
-//       rangelength: [5, 30]
-//     }
-//   },
-//   messages: {
-//     required: "поле не заполнено или заполнено не верно",
-//     rangelength: "Please enter a value between 5 and 30 characters long."
-//   }
-// });
+function validateDate() {
+  var isValid = true;
+  var date = $("[name = 'date']").val();
+  var dateArr = date.split("/");
 
+  if (date.search(/[0-9]+\/+[0-9]+\/+[0-9]{4}/g) === -1) {
+    alert('Date should be in format DD/MM/YYYY');
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+function validateIp() {
+  var isValid = true;
+  var ip = $("[name = 'ip']").val();
+  var pattern = /^\d+\.\d+\.\d+\.\d+$/g;
+
+  if(ip.search(pattern) === -1) {
+    alert('IP should be in format 0.0.0.0');
+    isValid = false;
+  }
+
+  return isValid;
+}
