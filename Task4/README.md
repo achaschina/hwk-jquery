@@ -12,4 +12,5 @@
 
 #### Description
 When you run plugin the symbols that more then limit will be hidden, insted of them you will see `...`
+
 When you click on `...` whole text will be shown.
