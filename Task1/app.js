@@ -22,6 +22,7 @@ function validateName() {
 function validateEmail() {
   var isValid = true;
   var $email = $("[name='email']");
+  //Email should be in format example@mail.
   var pattern = /([a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6})/g;
 
   if ($email.val().search(pattern) !== 0) {
