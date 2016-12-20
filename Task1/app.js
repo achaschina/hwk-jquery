@@ -1,4 +1,5 @@
 $('form').attr('onsubmit', 'return validate()');
+//add atributes to inputs
 $('[name="name"]').attr('placeholder','Enter Name');
 $('[name="email"]').attr('placeholder','Enter email');
 $('[name="date"]').attr('placeholder','DD/MM/YYYY');
