@@ -5,6 +5,7 @@ $('[name="email"]').attr('placeholder','Enter email');
 $('[name="date"]').attr('placeholder','DD/MM/YYYY');
 $('[name="ip"]').attr('placeholder','IP in format 0.0.0.0');
 
+
 function validate() {
   var val = validateName() && validateEmail() && validateDate() && validateIp();
   return val;
