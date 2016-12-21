@@ -20,6 +20,9 @@ function validateName() {
   } else if (name.search(/[0-9]/) !== -1) {
     alert('Name has to be without numbers');
     isValid = false;
+  } else if (!/[^!-*@#&\/]/.test(name)) {
+    alert('Name has to be without spesial symbols');
+    isValid = false;
   }
 
   return isValid;
