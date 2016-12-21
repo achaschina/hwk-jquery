@@ -1,5 +1,5 @@
 body {
-  background:#CFE6E2
+  background: #E1F0F8;
 }
 
 .main {
@@ -8,6 +8,8 @@ body {
   box-shadow: 0 0 22px #000;
   width: 1000px;
   height: 500px;
+  background: #4E5979;
+  border-radius: 20px;
 }
 
 #carousel {
@@ -27,10 +29,9 @@ body {
   float: left;
   width: 1000px;
   height: 500px;
-
 }
 
-#carousel>ul>li>img {
+#carousel ul li img {
   width: 920px;
   height: 460px;
 }
